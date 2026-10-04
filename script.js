@@ -1,6 +1,17 @@
-const toggle=document.querySelector('.nav-toggle');
-const nav=document.querySelector('.primary-nav');
-if(toggle&&nav){toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open',!open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));}
-document.getElementById('year').textContent=new Date().getFullYear();
-const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.08});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const toggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('.primary-nav');
+if (toggle && nav) {
+  toggle.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    nav.classList.toggle('open');
+  });
+}
+const year = document.getElementById('year');
+if (year) year.textContent = new Date().getFullYear();
+const io = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
