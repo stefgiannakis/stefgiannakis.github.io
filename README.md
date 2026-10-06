@@ -1,10 +1,3 @@
-# Stefanos Giannakis — personal academic website
+# Stefanos Giannakis website – V4 fixed
 
-Static GitHub Pages site. Version 3.
-
-Main data sources used for this build:
-- Scopus export dated 4 October 2026
-- consolidated 2026 CV evidence
-- recent funded-project and laboratory-capability information
-
-Unpublished proposal concepts are intentionally not presented as funded projects.
+This package includes the HTML pages, styles.css, script.js, publications-data.js and the assets folder required for the site to render correctly.

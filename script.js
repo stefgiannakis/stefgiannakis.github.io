@@ -1,4 +1,1 @@
-
-const toggle=document.querySelector('.nav-toggle');const nav=document.querySelector('.primary-nav');if(toggle&&nav){toggle.addEventListener('click',()=>{const e=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!e));nav.classList.toggle('open')})}
-const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();
-const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.addEventListener("DOMContentLoaded",()=>{const y=document.getElementById("year");if(y)y.textContent=new Date().getFullYear();const t=document.querySelector(".nav-toggle");const n=document.getElementById("primary-nav");if(t&&n){t.addEventListener("click",()=>{const open=n.classList.toggle("open");t.setAttribute("aria-expanded",open?"true":"false")})}});
